@@ -1,13 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import App from './App';
+import Event from './views/Event';
+import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Router>
+    <Switch>
+      <Route exact path='/' component={App} />
+      <Route path='/event/:id' component={Event} />
+    </Switch>
+  </Router>,
   document.getElementById('root')
 );
 
